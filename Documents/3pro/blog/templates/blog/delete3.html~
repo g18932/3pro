@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+
+<p>削除しました</p>
+
+ <a href="{% url 'course' %}">
+   時間割に戻る
+ </a>
+
+{% endblock %}

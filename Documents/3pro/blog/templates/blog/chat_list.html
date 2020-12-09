@@ -1,0 +1,16 @@
+{% extends 'blog/chat-home.html' %}
+
+{% block content %}
+  {% for chatpost in chatposts %}
+    <div class="post">
+      <div class="date">
+        {{ chatpost.published_date }}
+      </div>
+      <h2><a href="{% url 'chat_detail' pk=chatpost.pk %}">{{ chatpost.title }}</a></h2>
+      <p>{{ chatpost.text|linebreaksbr }}</p>
+      <a href="{% url 'chat_detail' pk=chatpost.pk %}">コメント: {{ chatpost.comment1s.count }}</a>
+    </div>
+  {% endfor %}
+  <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+{% endblock %}
+
